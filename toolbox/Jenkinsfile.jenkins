@@ -38,7 +38,7 @@ pipeline  {
                 echo 'Removing docker images ...'
                 dir('.'){
                     sh '''
-                    docker rmi -f $(docker images -aq) 2> /dev/null
+                    docker rmi -f $(docker images -a -q) 2> /dev/null
                    '''
                 }
             }
