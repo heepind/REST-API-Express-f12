@@ -28,7 +28,7 @@ pipeline  {
                 echo 'Removing docker containers ...'
                 dir('.'){
                     sh '''
-                    docker rm $(docker ps -aq)
+                    docker rm $(docker ps -a -q)
                    '''
                 }
             }
