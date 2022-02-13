@@ -18,7 +18,7 @@ pipeline  {
                 echo 'Stopping docker containers ...'
                 dir('.'){
                     sh '''
-                    docker stop $(docker ps -a -q) 2> /dev/null
+                    docker kill $(docker ps -q) 2> /dev/null
                    '''
                 }
             }
